@@ -12,9 +12,9 @@ translator = google_translator()
 BOT_TOKEN = Config.BOT_TOKEN
 BOT_ID = Config.BOT_ID
 
-bot = Client("MizukiChat", bot_token=BOT_TOKEN, api_id=6,
-             api_hash="eb06d4abfb49dc3eeb1aeb98ae0f581e")
-print("\nMizuki Chatbot Started!\n")
+bot = Client("Patricia", bot_token=BOT_TOKEN, api_id=3546656,
+             api_hash="48b79c54af688f05c350161bddea414c")
+print("\npatricia Started!\n")
 
 
 async def fetch(url):
@@ -54,7 +54,7 @@ async def mizuki(client, message):
             return
     finaltxt = test.replace(" ", "%20")
     try:
-        L = await fetch(f"https://api.affiliateplus.xyz/api/chatbot?message={finaltxt}&botname=Mizuki&ownername=Jason&user=1")
+        L = await fetch(f"https://api.affiliateplus.xyz/api/chatbot?message={finaltxt}&botname=Patricia&ownername=Jason&user=1")
         msg = L["message"]        
     except Exception as e:
         await m.edit(str(e))
@@ -72,13 +72,13 @@ async def mizuki(client, message):
 @bot.on_message(filters.command("start") & ~filters.edited)
 async def start(client, message):
    if message.chat.type == 'private':
-       await message.reply("**Hey There, I'm Mizuki. An advanced chatbot with AI. \n\nAdd me to your group and chat with me!**",   
+       await message.reply("**Hey There, I'm Patricia  An advanced chatbot with AI. \n\nAdd me to your group and chat with me!**",   
                             reply_markup=InlineKeyboardMarkup(
                                 [[
                                         InlineKeyboardButton(
-                                            "Dev", url="https://t.me/MizukiUpdatesOfficial"),
+                                            "support", url="https://t.me/patricia_support"),
                                         InlineKeyboardButton(
-                                            "Repo", url="https://github.com/ImJanindu/Mizuki-Chat-Bot")
+                                            "Repo", url="https://t.me/piroXpower")
                                     ]]
                             ),               
            )
